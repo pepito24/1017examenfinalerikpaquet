@@ -1,0 +1,235 @@
+// ************************************
+// Général
+// ************************************
+html body 
+    font-size: 16px
+
+.gris 
+    color: grey
+
+.big 
+    font-weight: 700 
+    font-size: 3rem
+
+// ************************************   
+// Style Footer
+// ************************************
+.footer    
+    background-color: #f0f0f0
+
+    ul li 
+        margin-bottom: 5px
+        a
+            color: #1e95d3
+            
+            &:hover 
+                text-decoration: underline
+
+        .active
+            color: black
+            font-weight: 500
+                
+    .footer-bottom
+        background-color: white
+        font-size: 0.875rem
+        p a
+            margin: 0 30px
+            color: black
+            font-weight: 500
+
+        @media screen and (max-width: 768px) 
+            text-align: center
+
+        .copyright
+            p a 
+                margin: 0 0
+                color: #1e95d3
+
+        .menu 
+            text-align: right
+
+        .menu, .copyright
+
+            @media screen and (max-width: 1200px) 
+                text-align: center
+                margin-left: 0
+					
+// ************************************
+// Cards 
+// ************************************
+.card 
+    .card-body 
+        .cimg 
+            width: 150px
+            float: right
+            margin-right: 30px
+            margin-left: 30px
+        .radius 
+            border-radius: 0rem
+
+// ************************************
+// Image d'en tête et autres containers
+// ************************************
+.header1, .box2, .box4, .header2, .header3
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+
+.header2, .header3
+    min-height: 50vh
+    h1 
+         margin-top: 6vh
+
+.header1 
+  min-height: 100vh
+  background-image: url('https://cdn.pixabay.com/photo/2016/03/26/13/09/notebook-1280538_960_720.jpg')
+
+  h1 
+    margin-top: 35vh
+
+
+.header2 
+    background-image: url('https://cdn.pixabay.com/photo/2015/07/17/22/42/startup-849804_960_720.jpg')
+
+.header3 
+    background-image: url('https://cdn.pixabay.com/photo/2016/02/18/19/25/pc-1207886_960_720.jpg')
+
+.box2 
+    background-image: url('https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_960_720.jpg')
+    min-height: 750px
+
+
+.box3 
+    padding: 8% 0
+    background-color: #f0f0f0
+
+    ul 
+        list-style-type: none
+
+        li
+            &:before 
+                content: "\2022" 
+                color: #007bff
+                display: inline-block 
+                width: 1.2em
+                margin-left: -1em
+
+
+.box4 
+    background-image: url('https://cdn.pixabay.com/photo/2015/07/17/22/42/startup-849804_960_720.jpg')
+    min-height: 750px
+        
+
+.box7 
+    background-color: #007bff 
+
+.box8 
+    background-image: url('https://cdn.pixabay.com/photo/2014/05/03/00/46/notebook-336634_960_720.jpg')
+    min-height: 70vh
+
+.box9 
+    background-color: #353535
+    padding: 10% 30px
+
+    p 
+        font-size: 20px
+
+.box10 
+    background-color: orange
+    min-height: 200px
+
+
+// ***************************************
+// Menu lorsque l'utilisateur est connecté
+// ***************************************
+.connecter 
+    
+    .menu-connecter 
+        background-color: #007bff
+        height: 100vh
+        padding: 0px 
+
+        @media screen and (max-width: 1200px) 
+            height: 100%
+            padding: 10px
+
+        .navbar 
+            padding: 0px
+
+            .navbar-nav 
+                flex: 0 0 100%
+                max-width: 100% 
+
+                .deco 
+                    margin-top: 40%
+
+                    @media screen and (max-width: 1200px) 
+                        margin-top: 20%
+
+                a 
+                    color: white
+                    padding: 15px
+                    text-decoration: none
+
+                    svg 
+                        margin: 0 20px 0 15px
+                    
+
+                    &:hover
+                        background-color: #3ebcff
+                        border-left: 5px solid lightblue
+
+// ****************************      
+// Menu Header 
+// ****************************
+.navbar
+    
+    @media screen and (min-width: 768px) 
+         background-color: none
+
+// ****************************      
+// Form (Barre de recherche)
+// ****************************
+form 
+
+    .col-xl-1 
+        padding: 0 0
+
+    .recherche 
+        background-color: white 
+        padding: 2px
+        
+        .form-control  
+            border: none
+            margin: 3px
+            padding-left: 30px
+            font-size: 14px
+
+            &:focus
+                box-shadow: none
+            
+        .btn
+            width: 100%
+            border-radius: 0
+            font-size: 14px
+            padding: 10px
+
+// ****************************      
+// 
+// ****************************
+.list-group
+
+    .list-group-item 
+        border-left: 8px solid rgba(0,0,0,.125)
+
+        p:last-child 
+            margin-bottom: 0
+            
+
+.info 
+    border: 1px solid black
+    padding: 5px
+
+.logo 
+    border: 1px solid black
+    padding: 20px
