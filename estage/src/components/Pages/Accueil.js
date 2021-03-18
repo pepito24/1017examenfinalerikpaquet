@@ -14,7 +14,6 @@ export class Accueil extends React.Component {
     render() {
         return (
             <> 
-            
                 <Top box="header1"></Top>
 
                 {

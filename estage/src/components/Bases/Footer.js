@@ -60,8 +60,8 @@ function Footer() {
                         <Link exact to="/" className="">Accueil</Link>
                         <Link exact to="/apropos" className="">À propos</Link>
                         <a href="https://www.google.ca/?hl=fr">Confidentialite</a>
-                        <a href="https://www.google.ca/?hl=fr">Nous joindre</a>
-                        <Link exact to="/connecter" className="">Partenaires</Link>
+                        <Link exact to="/info-stagiaire" className="">Nous joindre</Link>
+                        <Link exact to="/admin" className="">Partenaires</Link>
                     </p>
                 </Col>
                 

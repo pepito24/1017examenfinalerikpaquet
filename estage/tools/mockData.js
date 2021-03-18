@@ -1,46 +1,41 @@
-const pokemons = [
+
+const stages = [
     {
       "id" : 1,
-      "name":"Bulbasaur",
-      "picture" : "https://cdn.bulbagarden.net/upload/thumb/2/21/001Bulbasaur.png/500px-001Bulbasaur.png",
-      "abilities": [
-        {
-          "name": "Overgrow",
-        },
-        {
-          "name": "Chlorophyll",
-        },
-      ],
+      "title":"ACCEO1",
+      "subtitle":"ACCEO Solution",
+      "texte":"Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "link":"/",
+      "postuler":"/offre-stagiaire",
     },
     {
       "id" : 2,
-      "name":"Pikachu",
-      "picture" : "https://cdn.bulbagarden.net/upload/thumb/0/0d/025Pikachu.png/500px-025Pikachu.png",
-      "abilities": [
-        {
-          "name": "Static",
-        },
-        {
-          "name": "Lightning Rod",
-        },
-      ],
+      "title":"ACCEO2",
+      "subtitle":"ACCEO Solution",
+      "texte":"Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "link":"/",
+      "postuler":"/offre-stagiaire",
     },
     {
       "id" : 3,
-      "name":"Charmander",
-      "picture" : "https://cdn.bulbagarden.net/upload/thumb/7/73/004Charmander.png/500px-004Charmander.png",
-      "abilities": [
-        {
-          "name": "Blaze",
-        },
-        {
-          "name": "Solar Power",
-        },
-      ],
+      "title":"ACCEO3",
+      "subtitle":"ACCEO Solution",
+      "texte":"Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "link":"/",
+      "postuler":"/offre-stagiaire",
     },
-  ]
+    {
+      "id" : 4,
+      "title":"ACCEO4",
+      "subtitle":"ACCEO Solution",
+      "texte":"Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "link":"/",
+      "postuler":"/offre-stagiaire",
+    },
+]
+    
+module.exports = {
+    stages
+};
   
-  // Using CommonJS style export so we can consume via Node (without using Babel-node)
-  module.exports = {
-    pokemons
-  };
+  

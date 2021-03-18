@@ -4,42 +4,26 @@ import {Link} from 'react-router-dom';
 import { Cards } from "../Cards";
 
 
-
-const tabCards = [
-    {
-      title: "Card title",
-      subtitle: "Les invincibles",
-      texte: "Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      link: "/",
-      postuler: "/",
-    },
-    {
-        title: "Card title",
-        subtitle: "Les invincibles",
-        texte: "Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        link: "/",
-        postuler: "/",
-      },
-      {
-        title: "Card title",
-        subtitle: "Les invincibles",
-        texte: "Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        link: "/",
-        postuler: "/",
-      },
-      {
-        title: "Card title",
-        subtitle: "Les invincibles",
-        texte: "Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        link: "/",
-        postuler: "/",
-      },
-    
-  ];
-
-
-
 export class Listestage extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { donneesRecues: [] };
+  }
+  
+  //Ajout de la gestion des erreurs
+  async componentDidMount() {
+      try {
+        const response = await fetch("http://localhost:3001/stages");
+        const reponseDeApi = await response.json();
+        this.setState({ donneesRecues: reponseDeApi });
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
 
   render() {
@@ -47,7 +31,9 @@ export class Listestage extends React.Component {
         <> 
            <Container fluid className="px-5">
               <Row className="align-items-center px-5">
-                  {this.AfficherCards()}
+               {this.state.donneesRecues.slice(0, 4).map((key,i) => (
+                <Cards title={key.title} subtitle={key.subtitle} texte={key.texte}></Cards>
+                ))}     
               </Row>
               <Row className="mb-5">
                   <Col xl="12" className="text-center text-white my-5 pt-5">
@@ -57,15 +43,5 @@ export class Listestage extends React.Component {
           </Container>
         </>
     ); 
-}
-
-AfficherCards() { 
-  return tabCards.map((element, i) => (
-    <Cards
-      title={element.title}
-      subtitle={element.subtitle}
-      texte={element.texte}
-    ></Cards>
-  ));
-}
+  }
 }

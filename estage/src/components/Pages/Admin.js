@@ -3,7 +3,7 @@ import {Container, Row, Col} from "react-bootstrap";
 import  {Menu}  from "../Menu";
 
 
-export class Connecter extends React.Component {
+export class Admin extends React.Component {
 
   render() {
     return (

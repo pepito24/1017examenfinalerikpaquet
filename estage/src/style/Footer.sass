@@ -1,0 +1,46 @@
+// Variables.sass
+@import 'Variables' 
+    
+    
+// ************************************   
+// Style Footer
+// ************************************
+.footer    
+    background-color: $color_grey
+
+    ul li 
+        margin-bottom: 5px
+        a
+            color: $color_blue
+            
+            &:hover 
+                text-decoration: underline
+
+        .active
+            color: black
+            font-weight: 500
+                
+    .footer-bottom
+        background-color: white
+        font-size: 0.875rem
+        p a
+            margin: 0 30px
+            color: black
+            font-weight: 500
+
+        @media screen and (max-width: 768px) 
+            text-align: center
+
+        .copyright
+            p a 
+                margin: 0 0
+                color: $color_blue
+
+        .menu 
+            text-align: right
+
+        .menu, .copyright
+
+            @media screen and (max-width: 1200px) 
+                text-align: center
+                margin-left: 0

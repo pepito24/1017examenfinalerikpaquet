@@ -1,4 +1,18 @@
 // ************************************
+// Imports
+// ************************************
+    
+// Menu.sass
+@import 'Menu'
+
+// Footer.sass
+@import 'Footer'
+    
+// Variables.sass
+@import 'Variables'   
+
+    
+// ************************************
 // Général
 // ************************************
 html body 
@@ -10,50 +24,7 @@ html body
 .big 
     font-weight: 700 
     font-size: 3rem
-
-// ************************************   
-// Style Footer
-// ************************************
-.footer    
-    background-color: #f0f0f0
-
-    ul li 
-        margin-bottom: 5px
-        a
-            color: #1e95d3
-            
-            &:hover 
-                text-decoration: underline
-
-        .active
-            color: black
-            font-weight: 500
-                
-    .footer-bottom
-        background-color: white
-        font-size: 0.875rem
-        p a
-            margin: 0 30px
-            color: black
-            font-weight: 500
-
-        @media screen and (max-width: 768px) 
-            text-align: center
-
-        .copyright
-            p a 
-                margin: 0 0
-                color: #1e95d3
-
-        .menu 
-            text-align: right
-
-        .menu, .copyright
-
-            @media screen and (max-width: 1200px) 
-                text-align: center
-                margin-left: 0
-					
+			
 // ************************************
 // Cards 
 // ************************************
@@ -70,12 +41,12 @@ html body
 // ************************************
 // Image d'en tête et autres containers
 // ************************************
-.header1, .box2, .box4, .header2, .header3
+.header1, .box2, .box4, .header2, .header3, .header4
     background-size: cover
     background-position: center
     background-repeat: no-repeat
 
-.header2, .header3
+.header2, .header3, .header4
     min-height: 50vh
     h1 
          margin-top: 6vh
@@ -89,19 +60,21 @@ html body
 
 
 .header2 
-    background-image: url('https://cdn.pixabay.com/photo/2015/07/17/22/42/startup-849804_960_720.jpg')
+    background-image: url('https://via.placeholder.com/1500x500') // Image différente
 
 .header3 
-    background-image: url('https://cdn.pixabay.com/photo/2016/02/18/19/25/pc-1207886_960_720.jpg')
+    background-image: url('https://via.placeholder.com/1500x500') // Image différente
+
+.header4 
+    background-image: url('https://via.placeholder.com/1500x500') // Image différente
 
 .box2 
     background-image: url('https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_960_720.jpg')
     min-height: 750px
 
-
 .box3 
     padding: 8% 0
-    background-color: #f0f0f0
+    background-color: $color_grey
 
     ul 
         list-style-type: none
@@ -109,19 +82,17 @@ html body
         li
             &:before 
                 content: "\2022" 
-                color: #007bff
+                color: $color_blue
                 display: inline-block 
                 width: 1.2em
                 margin-left: -1em
-
 
 .box4 
     background-image: url('https://cdn.pixabay.com/photo/2015/07/17/22/42/startup-849804_960_720.jpg')
     min-height: 750px
         
-
 .box7 
-    background-color: #007bff 
+    background-color: $color_blue
 
 .box8 
     background-image: url('https://cdn.pixabay.com/photo/2014/05/03/00/46/notebook-336634_960_720.jpg')
@@ -135,17 +106,42 @@ html body
         font-size: 20px
 
 .box10 
-    background-color: orange
+    background-image: url('https://via.placeholder.com/1500x200')
     min-height: 200px
 
+// ****************************      
+// Form (Barre de recherche)
+// ****************************
+form 
+
+    .col-xl-1 
+        padding: 0 0
+
+    .recherche 
+        background-color: white 
+        padding: 2px
+        
+        .form-control  
+            border: none
+            margin: 3px
+            padding-left: 30px
+            font-size: 14px
+
+            &:focus
+                box-shadow: none
+            
+        .btn
+            width: 100%
+            border-radius: 0
+            font-size: 14px
+            padding: 10px
 
 // ***************************************
 // Menu lorsque l'utilisateur est connecté
 // ***************************************
-.connecter 
-    
+.connecter  
     .menu-connecter 
-        background-color: #007bff
+        background-color: $color_blue
         height: 100vh
         padding: 0px 
 
@@ -179,40 +175,6 @@ html body
                         background-color: #3ebcff
                         border-left: 5px solid lightblue
 
-// ****************************      
-// Menu Header 
-// ****************************
-.navbar
-    
-    @media screen and (min-width: 768px) 
-         background-color: none
-
-// ****************************      
-// Form (Barre de recherche)
-// ****************************
-form 
-
-    .col-xl-1 
-        padding: 0 0
-
-    .recherche 
-        background-color: white 
-        padding: 2px
-        
-        .form-control  
-            border: none
-            margin: 3px
-            padding-left: 30px
-            font-size: 14px
-
-            &:focus
-                box-shadow: none
-            
-        .btn
-            width: 100%
-            border-radius: 0
-            font-size: 14px
-            padding: 10px
 
 // ****************************      
 // 
@@ -227,9 +189,29 @@ form
             
 
 .info 
-    border: 1px solid black
-    padding: 5px
+
+    .btn 
+        width: 100%
+        border-radius: 0
+
+    .info2 
+        text-align: right
+
+        @media screen and (max-width: 1200px) 
+            text-align: center
+
+    @media screen and (max-width: 1200px) 
+            text-align: center
+
+
 
 .logo 
-    border: 1px solid black
-    padding: 20px
+
+    .card
+        height: 100%
+        width: 100%
+
+        img 
+            width: 150px
+
+    

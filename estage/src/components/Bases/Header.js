@@ -26,8 +26,8 @@ export class Header extends React.Component {
             </Nav>
 
             <Nav className="mr-lg-5 mt-2">
-              <Link hexact to="/" className="btn btn-light mr-lg-2">Connexion</Link>
-              <Link eventKey={2} exact to="/" className="btn btn-dark mr-lg-5">Inscription</Link>
+              <Link hexact to="/connexion" className="btn btn-light mr-lg-2">Connexion</Link>
+              <Link eventKey={2} exact to="/teste" className="btn btn-dark mr-lg-5">Inscription</Link>
             </Nav>
 
           </Navbar.Collapse>

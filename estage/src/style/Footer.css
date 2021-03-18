@@ -1,0 +1,54 @@
+.footer {
+  background-color: #f0f0f0;
+}
+
+.footer ul li {
+  margin-bottom: 5px;
+}
+
+.footer ul li a {
+  color: #007bff;
+}
+
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer ul li .active {
+  color: black;
+  font-weight: 500;
+}
+
+.footer .footer-bottom {
+  background-color: white;
+  font-size: 0.875rem;
+}
+
+.footer .footer-bottom p a {
+  margin: 0 30px;
+  color: black;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .footer .footer-bottom {
+    text-align: center;
+  }
+}
+
+.footer .footer-bottom .copyright p a {
+  margin: 0 0;
+  color: #007bff;
+}
+
+.footer .footer-bottom .menu {
+  text-align: right;
+}
+
+@media screen and (max-width: 1200px) {
+  .footer .footer-bottom .menu, .footer .footer-bottom .copyright {
+    text-align: center;
+    margin-left: 0;
+  }
+}
+/*# sourceMappingURL=Footer.css.map */
