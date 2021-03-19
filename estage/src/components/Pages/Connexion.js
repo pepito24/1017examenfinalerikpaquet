@@ -7,12 +7,25 @@ import  {BlockImagetexte}  from "../BlockImageTexte";
 
 
 export class Connexion extends React.Component {
+
+    constructor(props) {  
+    super(props);  
+    this.state = {connecter: false};
+    this.handleConnexion = this.handleConnexion.bind(this);
+    }
+
+    handleConnexion(){
+        const email = document.getElementById('email').value;
+        const pass = document.getElementById('password').value;
+        if (email.toLowerCase() === "g.o.t.s@hotmail.com" && pass === "erik")
+            this.setState({ connecter: true });   
+    } 
     render() {
         return (
             <>         
                 <Top box="header2"></Top>
 
-                <Login/>
+                <Login onClick={this.handleConnexion}/>
 
                 <BlockImagetexte/>
 

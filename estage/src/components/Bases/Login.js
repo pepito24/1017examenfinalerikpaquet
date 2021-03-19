@@ -2,20 +2,7 @@ import React from "react";
 import {Container, Row, Col, Form, Button} from "react-bootstrap";
 
 export class Login extends React.Component {
-  constructor(props) {  
-    super(props);  
-    this.handleConnexion = this.handleConnexion.bind(this);  
-  } 
-  handleConnexion(){
-    let connecter = false;
-
-    const email = document.getElementById('email').value;
-    const pass = document.getElementById('password').value;
-    if (email.toLowerCase() === "shany.carle@gmail.com" && pass === "patate")
-      connecter = true;
-    this.props.onClick(connecter);  
-  } 
-
+  
   render() {
     return (
         <> 
@@ -24,34 +11,18 @@ export class Login extends React.Component {
                   <Col xl="4" className="">
                     <h1 className="mb-5">Identification</h1>
                     <Form>
-                        <Form.Group controlId="email">
-                            <Form.Label>Adresse courriel</Form.Label>
-                            <Form.Control type="email" placeholder="name@example.com" required/>
-                            <Form.Text className="text-muted">
-                              We'll never share your email with anyone else.
-                            </Form.Text>
-                        </Form.Group>
+                    <Form.Group controlId="email">
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control type="email" placeholder="Enter email"/>
+                </Form.Group>
 
-                        <Form.Group controlId="password">
-                        <Form.Label htmlFor="inputPassword5">Password</Form.Label>
-                          <Form.Control
-                            type="password"
-                            id="inputPassword5"
-                            aria-describedby="passwordHelpBlock"
-                            required
-                          />
-                          <Form.Text id="passwordHelpBlock" muted>
-                            Votre mot de passe doit comporter entre 8 et 20 caractères et
-                            ne doit pas contenir d'espaces, de caractères spéciaux ou d'emoji.
-                          </Form.Text>
-                        </Form.Group>
-
-
-                        <Button variant="primary" onClick={this.handleConnexion}>
+                <Form.Group controlId="password">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control type="password" placeholder="Password"/>
+                </Form.Group>
+                        <Button variant="primary" onClick={this.props.onClick}>
                             Submit
                         </Button>
-
-
                     </Form> 
                   </Col> 
                   <Col xl="1" className=""></Col>

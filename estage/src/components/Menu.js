@@ -1,8 +1,9 @@
 import React from "react";
-import {Col, Navbar, Nav} from "react-bootstrap";
+import {Col, Navbar, Nav, Button} from "react-bootstrap";
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faGraduationCap, faArrowCircleRight, faArrowAltCircleLeft, faDoorOpen } from '@fortawesome/free-solid-svg-icons';
+
 
 export class Menu extends React.Component {
   render() {
@@ -19,7 +20,9 @@ export class Menu extends React.Component {
                         <Link exact to="/" className=""><FontAwesomeIcon icon={faArrowAltCircleLeft} />Demandes de stage</Link>
                         <Link exact to="/" className=""><FontAwesomeIcon icon={faGraduationCap} />Candidats</Link>
                         <Link exact to="/" className=""><FontAwesomeIcon icon={faUser} />Entreprises</Link>
-                        <Link exact to="/" className="deco"><FontAwesomeIcon icon={faDoorOpen} />Déconnexion</Link>
+                        <Button variant="danger" className="deco" onClick={this.props.onClick}>
+                          <FontAwesomeIcon icon={faDoorOpen} />Déconnexion
+                        </Button>
                       </Nav>
                   </Navbar.Collapse> 
                 </Navbar> 
