@@ -4,6 +4,55 @@
   }
 }
 
+.connecter .menu-connecter {
+  background-color: #007bff;
+  height: 100vh;
+  padding: 0px;
+}
+
+@media screen and (max-width: 1200px) {
+  .connecter .menu-connecter {
+    height: 100%;
+    padding: 10px;
+  }
+}
+
+.connecter .menu-connecter .navbar {
+  padding: 0px;
+}
+
+.connecter .menu-connecter .navbar .navbar-nav {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.connecter .menu-connecter .navbar .navbar-nav .deco {
+  margin-top: 40%;
+}
+
+@media screen and (max-width: 1200px) {
+  .connecter .menu-connecter .navbar .navbar-nav .deco {
+    margin-top: 20%;
+  }
+}
+
+.connecter .menu-connecter .navbar .navbar-nav a {
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.connecter .menu-connecter .navbar .navbar-nav a svg {
+  margin: 0 20px 0 15px;
+}
+
+.connecter .menu-connecter .navbar .navbar-nav a:hover {
+  background-color: #3ebcff;
+  border-left: 5px solid lightblue;
+}
+
 .footer {
   background-color: #f0f0f0;
 }
@@ -106,15 +155,15 @@ html body {
 }
 
 .header2 {
-  background-image: url("https://via.placeholder.com/1500x500");
+  background-image: url("https://cdn.pixabay.com/photo/2016/02/18/19/25/pc-1207886_960_720.jpg");
 }
 
 .header3 {
-  background-image: url("https://via.placeholder.com/1500x500");
+  background-image: url("https://cdn.pixabay.com/photo/2016/02/18/19/25/pc-1207886_960_720.jpg");
 }
 
 .header4 {
-  background-image: url("https://via.placeholder.com/1500x500");
+  background-image: url("https://cdn.pixabay.com/photo/2016/02/18/19/25/pc-1207886_960_720.jpg");
 }
 
 .box2 {
@@ -163,7 +212,7 @@ html body {
 }
 
 .box10 {
-  background-image: url("https://via.placeholder.com/1500x200");
+  background-color: orange;
   min-height: 200px;
 }
 
@@ -193,55 +242,6 @@ form .recherche .btn {
   border-radius: 0;
   font-size: 14px;
   padding: 10px;
-}
-
-.connecter .menu-connecter {
-  background-color: #007bff;
-  height: 100vh;
-  padding: 0px;
-}
-
-@media screen and (max-width: 1200px) {
-  .connecter .menu-connecter {
-    height: 100%;
-    padding: 10px;
-  }
-}
-
-.connecter .menu-connecter .navbar {
-  padding: 0px;
-}
-
-.connecter .menu-connecter .navbar .navbar-nav {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.connecter .menu-connecter .navbar .navbar-nav .deco {
-  margin-top: 40%;
-}
-
-@media screen and (max-width: 1200px) {
-  .connecter .menu-connecter .navbar .navbar-nav .deco {
-    margin-top: 20%;
-  }
-}
-
-.connecter .menu-connecter .navbar .navbar-nav a {
-  color: white;
-  padding: 15px;
-  text-decoration: none;
-}
-
-.connecter .menu-connecter .navbar .navbar-nav a svg {
-  margin: 0 20px 0 15px;
-}
-
-.connecter .menu-connecter .navbar .navbar-nav a:hover {
-  background-color: #3ebcff;
-  border-left: 5px solid lightblue;
 }
 
 .list-group .list-group-item {
@@ -280,5 +280,23 @@ form .recherche .btn {
 
 .logo .card img {
   width: 150px;
+}
+
+@media screen and (max-width: 1200px) {
+  .apropos p, .apropos h5 {
+    text-align: center;
+  }
+}
+
+.apropos img {
+  width: 100%;
+}
+
+.apropos .image {
+  height: 300px;
+}
+
+.admincards .card {
+  background-color: #f0f0f0;
 }
 /*# sourceMappingURL=App.css.map */

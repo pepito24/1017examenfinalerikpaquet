@@ -29,7 +29,7 @@ export class Listestage extends React.Component {
   render() {
     return (
         <> 
-           <Container fluid className="px-5">
+           <Container fluid className="px-xl-5">
               <Row className="align-items-center px-5">
                {this.state.donneesRecues.slice(0, 4).map((key,i) => (
                 <Cards title={key.title} subtitle={key.subtitle} texte={key.texte}></Cards>
@@ -37,7 +37,7 @@ export class Listestage extends React.Component {
               </Row>
               <Row className="mb-5">
                   <Col xl="12" className="text-center text-white my-5 pt-5">
-                      <Link exact to="/" className="btn btn-danger">Voir toutes les offres de stage</Link> 
+                      <Link exact to="/stages" className="btn btn-danger">Voir toutes les offres de stage</Link> 
                   </Col>
               </Row>
           </Container>

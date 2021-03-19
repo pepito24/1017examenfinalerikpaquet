@@ -28,7 +28,7 @@ export class Listecandidats extends React.Component {
   render() {
     return (
         <> 
-          <Container fluid className="px-5">
+          <Container fluid className="px-xl-5">
               <Row className="align-items-center px-5">
               {this.state.donneesRecues.map((key,i) => (
                 <Cards title={key.title} subtitle={key.subtitle} texte={key.texte}></Cards>

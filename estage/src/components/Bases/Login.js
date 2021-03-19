@@ -25,20 +25,33 @@ export class Login extends React.Component {
                     <h1 className="mb-5">Identification</h1>
                     <Form>
                         <Form.Group controlId="email">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Label>Adresse courriel</Form.Label>
+                            <Form.Control type="email" placeholder="name@example.com" required/>
                             <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
+                              We'll never share your email with anyone else.
                             </Form.Text>
                         </Form.Group>
 
                         <Form.Group controlId="password">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" />
+                        <Form.Label htmlFor="inputPassword5">Password</Form.Label>
+                          <Form.Control
+                            type="password"
+                            id="inputPassword5"
+                            aria-describedby="passwordHelpBlock"
+                            required
+                          />
+                          <Form.Text id="passwordHelpBlock" muted>
+                            Votre mot de passe doit comporter entre 8 et 20 caractères et
+                            ne doit pas contenir d'espaces, de caractères spéciaux ou d'emoji.
+                          </Form.Text>
                         </Form.Group>
+
+
                         <Button variant="primary" onClick={this.handleConnexion}>
                             Submit
                         </Button>
+
+
                     </Form> 
                   </Col> 
                   <Col xl="1" className=""></Col>
@@ -48,23 +61,23 @@ export class Login extends React.Component {
                       <Form.Row>
                         <Form.Group as={Col} controlId="formGridEmail">
                           <Form.Label>Email</Form.Label>
-                          <Form.Control type="email" placeholder="Enter email" />
+                          <Form.Control type="email" placeholder="Enter email" required/>
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="formGridPassword">
                           <Form.Label>Password</Form.Label>
-                          <Form.Control type="password" placeholder="Password" />
+                          <Form.Control type="password" placeholder="Password" required/>
                         </Form.Group>
                       </Form.Row>
 
                       <Form.Group controlId="formGridAddress1">
                         <Form.Label>Address</Form.Label>
-                        <Form.Control placeholder="1234 Main St" />
+                        <Form.Control placeholder="1234 Main St" required/>
                       </Form.Group>
 
                       <Form.Group controlId="formGridAddress2">
                         <Form.Label>Address 2</Form.Label>
-                        <Form.Control placeholder="Apartment, studio, or floor" />
+                        <Form.Control placeholder="Apartment, studio, or floor" required/>
                       </Form.Group>
 
                       <Form.Row>
@@ -73,13 +86,6 @@ export class Login extends React.Component {
                           <Form.Control />
                         </Form.Group>
 
-                        <Form.Group as={Col} controlId="formGridState">
-                          <Form.Label>State</Form.Label>
-                          <Form.Control as="select" defaultValue="Choose...">
-                            <option>Choose...</option>
-                            <option>...</option>
-                          </Form.Control>
-                        </Form.Group>
 
                         <Form.Group as={Col} controlId="formGridZip">
                           <Form.Label>Zip</Form.Label>

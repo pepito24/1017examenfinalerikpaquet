@@ -58,15 +58,13 @@ html body
   h1 
     margin-top: 35vh
 
-
 .header2 
-    background-image: url('https://via.placeholder.com/1500x500') // Image différente
-
+    background-image: url('https://cdn.pixabay.com/photo/2016/02/18/19/25/pc-1207886_960_720.jpg') 
 .header3 
-    background-image: url('https://via.placeholder.com/1500x500') // Image différente
+    background-image: url('https://cdn.pixabay.com/photo/2016/02/18/19/25/pc-1207886_960_720.jpg') // Image différente
 
 .header4 
-    background-image: url('https://via.placeholder.com/1500x500') // Image différente
+    background-image: url('https://cdn.pixabay.com/photo/2016/02/18/19/25/pc-1207886_960_720.jpg') // Image différente
 
 .box2 
     background-image: url('https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_960_720.jpg')
@@ -106,7 +104,7 @@ html body
         font-size: 20px
 
 .box10 
-    background-image: url('https://via.placeholder.com/1500x200')
+    background-color: orange
     min-height: 200px
 
 // ****************************      
@@ -135,45 +133,6 @@ form
             border-radius: 0
             font-size: 14px
             padding: 10px
-
-// ***************************************
-// Menu lorsque l'utilisateur est connecté
-// ***************************************
-.connecter  
-    .menu-connecter 
-        background-color: $color_blue
-        height: 100vh
-        padding: 0px 
-
-        @media screen and (max-width: 1200px) 
-            height: 100%
-            padding: 10px
-
-        .navbar 
-            padding: 0px
-
-            .navbar-nav 
-                flex: 0 0 100%
-                max-width: 100% 
-
-                .deco 
-                    margin-top: 40%
-
-                    @media screen and (max-width: 1200px) 
-                        margin-top: 20%
-
-                a 
-                    color: white
-                    padding: 15px
-                    text-decoration: none
-
-                    svg 
-                        margin: 0 20px 0 15px
-                    
-
-                    &:hover
-                        background-color: #3ebcff
-                        border-left: 5px solid lightblue
 
 
 // ****************************      
@@ -214,4 +173,19 @@ form
         img 
             width: 150px
 
-    
+
+.apropos 
+
+    p,h5 
+        @media screen and (max-width: 1200px) 
+            text-align: center
+    img 
+        width: 100%
+
+    .image 
+        height: 300px
+
+
+.admincards
+    .card 
+        background-color: $color_grey

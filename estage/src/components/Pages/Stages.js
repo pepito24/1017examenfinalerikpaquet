@@ -2,27 +2,27 @@ import React from "react";
 import  Footer  from "../Bases/Footer";
 import  {Imgauche}  from "../Imgauche";
 import  {Imgdroite}  from "../Imgdroite";
-import  {Texte}  from "../Texte";
 import  {Top}  from "../Bases/Top";
+import  {Texte}  from "../Texte";
 import  {Affiche}  from "../Affiche";
-import  {Listestage}  from "../Listes/Listestage";
-import  {ListeVerticalStagiaires}  from "../Listes/ListeVerticalStagiaires";
+import { Listecandidats } from "../Listes/Listecandidats";
+import  {ListeVerticalStages}  from "../Listes/ListeVerticalStages";
 
 
-export class Candidats extends React.Component {
+export class Stages extends React.Component {
 
     render() {
         return (
             <> 
                 <Top box="header3"></Top>
 
-                <ListeVerticalStagiaires/>
+                <ListeVerticalStages/>
 
                 <Imgauche/>
 
-                <Texte h1="Tu es à la recherche d'un stage?" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore aliqua."></Texte>
+                <Texte h1="Votre futur stagiaire se trouve ici." text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore aliqua."></Texte>
 
-                <Listestage/>
+                <Listecandidats/>
 
                 <Imgdroite/>
 

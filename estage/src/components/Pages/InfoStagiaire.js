@@ -15,43 +15,19 @@ export class InfoStagiaire extends React.Component {
     render() {
         return (
             <> 
-                 <Top box="header4"></Top>
-
-                {
-                    // Your comment goes in here.
-                }
+                <Top box="header4"></Top>
 
                 <Fiches/>
 
-                {
-                    // Your comment goes in here.
-                }
-
                 <Imgauche/>
-
-                {
-                    // Your comment goes in here.
-                }
 
                 <Texte/>
 
                 <Listestage/>
 
-                {
-                    // Your comment goes in here.
-                }
-
                 <Imgdroite/>
 
-                {
-                    // Your comment goes in here.
-                }
-
                 <Affiche/>
-
-                {
-                    // Your comment goes in here.
-                }
                
                 <Footer/>
             </>
