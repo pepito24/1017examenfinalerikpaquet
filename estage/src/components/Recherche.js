@@ -1,10 +1,7 @@
 import React from "react";
 import {Form, Button, Col, Row} from "react-bootstrap";
 
-
 export class Recherche extends React.Component {
-  
-
   render() {
     return (
       <>

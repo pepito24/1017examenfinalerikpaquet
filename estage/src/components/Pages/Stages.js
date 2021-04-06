@@ -8,13 +8,11 @@ import  {Affiche}  from "../Affiche";
 import { Listecandidats } from "../Listes/Listecandidats";
 import  {ListeVerticalStages}  from "../Listes/ListeVerticalStages";
 
-
 export class Stages extends React.Component {
-
     render() {
         return (
             <> 
-                <Top box="header3"></Top>
+                <Top box="header2"></Top>
 
                 <ListeVerticalStages/>
 
@@ -33,4 +31,3 @@ export class Stages extends React.Component {
         ); 
     }
 }
-

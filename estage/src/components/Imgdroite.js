@@ -2,14 +2,11 @@ import React from "react";
 import {Container, Row, Col} from "react-bootstrap";
 import {Link} from 'react-router-dom' 
 
-
 export class Imgdroite extends React.Component {
-
-
-  render() {
-      return (
-          <> 
-            <Container fluid className="box my-3">
+    render() {
+        return (
+            <> 
+                <Container fluid className="box my-3">
                     <Row className="">
                         <Col xl="6" className="box3 px-5">
                             <h1 className="px-5 big">Pourquoi publier<br></br> une offre de stage?</h1>
@@ -21,10 +18,10 @@ export class Imgdroite extends React.Component {
                             </ul>
                             <Link exact to="/" className="btn btn-primary mx-5 mt-3">Publier une offre de stage maintenant!</Link> 
                         </Col>
-                        <Col xl="6" className="box4"></Col>
+                        <Col xl="6" className="box2"></Col>
                     </Row>
                 </Container>
-          </>
-      ); 
-  }
+            </>
+        ); 
+    }
 }

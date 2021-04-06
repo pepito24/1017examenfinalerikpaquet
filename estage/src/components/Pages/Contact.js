@@ -1,9 +1,24 @@
 import React from "react";
 import {Container, Row, Col, Form, Button} from "react-bootstrap";
-import  Footer  from "../Bases/Footer";
-import  {Top}  from "../Bases/Top";
+import Footer  from "../Bases/Footer";
+import {Top}  from "../Bases/Top";
 
 export class Contact extends React.Component {
+    constructor(props) {  
+        super(props);  
+        this.state = {errors : {}}; 
+    } 
+    
+    // Gestion des erreurs
+    formulaireEstValide(email){
+    const _errors ={}; 
+    if(!email) _errors.email = "Le courriel est obligatoire"; 
+
+    this.setState({errors : _errors}); 
+    return Object.keys(_errors).length === 0; 
+    } 
+    
+
     render() {
         return (
             <>            
@@ -27,26 +42,29 @@ export class Contact extends React.Component {
                                     <Col>
                                         <Form.Group controlId="exampleForm.ControlInput1">
                                             <Form.Label>Prénom</Form.Label>
-                                            <Form.Control placeholder="Prénom" />
+                                            <Form.Control placeholder="Prénom" required/>
                                         </Form.Group>
                                     </Col>
                                     <Col>
                                         <Form.Group controlId="exampleForm.ControlInput2">
                                             <Form.Label>Nom</Form.Label>
-                                            <Form.Control placeholder="Nom" />
+                                            <Form.Control placeholder="Nom" required/>
                                         </Form.Group>
                                     </Col>
                                 </Row>
                                 <Form.Group controlId="exampleForm.ControlInput3">
                                     <Form.Label>Adresse courriel</Form.Label>
-                                    <Form.Control type="email" placeholder="name@example.com" />
+                                    <Form.Control type="email" placeholder="name@example.com" required isInvalid={!!this.state.errors.email} />
+                                    <Form.Control.Feedback type="invalid"> 
+                                        {this.state.errors.email} 
+                                    </Form.Control.Feedback>
                                 </Form.Group>
                                 
                                 <Form.Group controlId="exampleForm.ControlTextarea1">
                                     <Form.Label>Questions</Form.Label>
                                     <Form.Control as="textarea" rows={5} />
                                 </Form.Group>
-                                <Button variant="primary" href="mailto:webmaster@example.com">
+                                <Button variant="primary" type="submit">
                                     Envoyer
                                 </Button>
                             </Form>

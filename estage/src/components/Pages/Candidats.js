@@ -8,13 +8,11 @@ import  {Affiche}  from "../Affiche";
 import  {Listestage}  from "../Listes/Listestage";
 import  {ListeVerticalStagiaires}  from "../Listes/ListeVerticalStagiaires";
 
-
 export class Candidats extends React.Component {
-
     render() {
         return (
             <> 
-                <Top box="header3"></Top>
+                <Top box="header2"></Top>
 
                 <ListeVerticalStagiaires/>
 

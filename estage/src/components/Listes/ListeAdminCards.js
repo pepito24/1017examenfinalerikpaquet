@@ -1,63 +1,36 @@
 import React from "react";
-//import {Container, Row, Col} from "react-bootstrap";
 import {AdminCards} from "../AdminCards";
 
-
-
-
-const tabCards = [
-    {
-      title: "Card title",
-      subtitle: "Les invincibles",
-      texte: "Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      link: "/",
-      postuler: "/info-stagiaire",
-    },
-    {
-        title: "Card title",
-        subtitle: "Les invincibles",
-        texte: "Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        link: "/",
-        postuler: "/info-stagiaire",
-      },
-      {
-        title: "Card title",
-        subtitle: "Les invincibles",
-        texte: "Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        link: "/",
-        postuler: "/info-stagiaire",
-      },
-      {
-        title: "Card title",
-        subtitle: "Les invincibles",
-        texte: "Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        link: "/",
-        postuler: "/info-stagiaire",
-      },
-    
-  ];
-
-
-
 export class ListeAdminCards extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { donneesRecues: [] };
+  }
+  
+  // Gérer l'accès API
+  async componentDidMount() {
+      try {
+        const response = await fetch("https://peaceful-headland-60327.herokuapp.com/api/demandes");
+        const reponseDeApi = await response.json();
+        this.setState({ donneesRecues: reponseDeApi });
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+
 
   render() {
     return (
         <>          
-          {this.AfficherCards()}          
+          {this.state.donneesRecues.map((key,i) => (
+            <AdminCards titre={key.titre} ville={key.ville} competences={key.competences} descriptionPosteRecherche={key.descriptionPosteRecherche}></AdminCards>
+            ))}             
         </>
     ); 
-  }
-
-  AfficherCards() { 
-    return tabCards.map((element, i) => (
-      <AdminCards
-        title={element.title}
-        subtitle={element.subtitle}
-        texte={element.texte}
-        link={element.link}
-        postuler={element.postuler}
-      ></AdminCards>
-    ));
   }
 }

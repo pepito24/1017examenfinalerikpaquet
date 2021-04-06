@@ -11,10 +11,10 @@ export class Listecandidats extends React.Component {
     this.state = { donneesRecues: [] };
   }
   
-  //Ajout de la gestion des erreurs
-  async componentDidMount2() {
+  // Gérer l'accès API
+  async componentDidMount() {
       try {
-        const response = await fetch("http://localhost:3001/stagiaires");
+        const response = await fetch("https://peaceful-headland-60327.herokuapp.com/api/etudiant");
         const reponseDeApi = await response.json();
         this.setState({ donneesRecues: reponseDeApi });
         if (!response.ok) {
@@ -27,20 +27,20 @@ export class Listecandidats extends React.Component {
 
   render() {
     return (
-        <> 
-          <Container fluid className="px-xl-5">
-              <Row className="align-items-center px-5">
-              {this.state.donneesRecues.map((key,i) => (
-                <Cards title={key.title} subtitle={key.subtitle} texte={key.texte}></Cards>
-                ))}
-              </Row>
-              <Row className="mb-5">
-                  <Col xl="12" className="text-center text-white my-5 pt-5">
-                      <Link exact to="/candidats" className="btn btn-danger">Voir tous les candidats</Link> 
-                  </Col>
-              </Row>
-          </Container>
-        </>
+      <> 
+        <Container fluid className="px-xl-5">
+          <Row className="align-items-center px-5">
+            {this.state.donneesRecues.map((key,i) => (
+              <Cards nom={key.nom} prenom={key.prenom} telephone={key.telephone} ville={key.ville} competences={key.competences} formations={key.formations}></Cards>
+            ))}
+          </Row>
+          <Row className="mb-5">
+            <Col xl="12" className="text-center text-white my-5 pt-5">
+                <Link exact to="/candidats" className="btn btn-danger">Voir tous les candidats</Link> 
+            </Col>
+          </Row>
+        </Container>
+      </>
     ); 
   }
 }

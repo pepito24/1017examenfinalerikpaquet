@@ -41,15 +41,10 @@ html body
 // ************************************
 // Image d'en tête et autres containers
 // ************************************
-.header1, .box2, .box4, .header2, .header3, .header4
+.header1, .box2, .header2,
     background-size: cover
     background-position: center
     background-repeat: no-repeat
-
-.header2, .header3, .header4
-    min-height: 50vh
-    h1 
-         margin-top: 6vh
 
 .header1 
   min-height: 100vh
@@ -59,12 +54,11 @@ html body
     margin-top: 35vh
 
 .header2 
+    min-height: 50vh
     background-image: url('https://cdn.pixabay.com/photo/2016/02/18/19/25/pc-1207886_960_720.jpg') 
-.header3 
-    background-image: url('https://cdn.pixabay.com/photo/2016/02/18/19/25/pc-1207886_960_720.jpg') // Image différente
 
-.header4 
-    background-image: url('https://cdn.pixabay.com/photo/2016/02/18/19/25/pc-1207886_960_720.jpg') // Image différente
+    h1 
+         margin-top: 6vh
 
 .box2 
     background-image: url('https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_960_720.jpg')
@@ -84,16 +78,12 @@ html body
                 display: inline-block 
                 width: 1.2em
                 margin-left: -1em
-
-.box4 
-    background-image: url('https://cdn.pixabay.com/photo/2015/07/17/22/42/startup-849804_960_720.jpg')
-    min-height: 750px
         
 .box7 
     background-color: $color_blue
 
 .box8 
-    background-image: url('https://cdn.pixabay.com/photo/2014/05/03/00/46/notebook-336634_960_720.jpg')
+    background-image: url('https://cdn.pixabay.com/photo/2014/05/03/00/46/notebook-336634_960_720.jpg') // Normalement l'image serait différente de la .box2
     min-height: 70vh
 
 .box9 
@@ -111,7 +101,6 @@ html body
 // Form (Barre de recherche)
 // ****************************
 form 
-
     .col-xl-1 
         padding: 0 0
 
@@ -136,10 +125,9 @@ form
 
 
 // ****************************      
-// 
+//  Section Secteurs d'activité
 // ****************************
 .list-group
-
     .list-group-item 
         border-left: 8px solid rgba(0,0,0,.125)
 
@@ -148,7 +136,6 @@ form
             
 
 .info 
-
     .btn 
         width: 100%
         border-radius: 0
@@ -160,12 +147,11 @@ form
             text-align: center
 
     @media screen and (max-width: 1200px) 
-            text-align: center
+        text-align: center
 
 
 
 .logo 
-
     .card
         height: 100%
         width: 100%
@@ -174,8 +160,10 @@ form
             width: 150px
 
 
+// ****************************      
+//  Page à propos
+// ****************************
 .apropos 
-
     p,h5 
         @media screen and (max-width: 1200px) 
             text-align: center
@@ -185,7 +173,13 @@ form
     .image 
         height: 300px
 
-
+// ****************************      
+//  Admin cards
+// ****************************
 .admincards
     .card 
         background-color: $color_grey
+
+
+  
+        

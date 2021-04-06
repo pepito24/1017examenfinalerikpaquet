@@ -5,7 +5,6 @@ import  {Affiche}  from "../Affiche";
 import  {Top}  from "../Bases/Top";
 import  {TexteBleu}  from "../TexteBleu";
 
-
 export class Apropos extends React.Component {
     render() {
         return (

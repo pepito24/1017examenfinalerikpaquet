@@ -3,7 +3,6 @@ import {Container, Row, Col} from "react-bootstrap";
 import  Footer  from "../Bases/Footer";
 import  {Top}  from "../Bases/Top";
 
-
 export class Confidentialite extends React.Component {
     render() {
         return (

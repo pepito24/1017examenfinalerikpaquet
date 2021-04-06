@@ -6,8 +6,8 @@
 
 .connecter .menu-connecter {
   background-color: #007bff;
-  height: 100vh;
   padding: 0px;
+  min-height: 100vh;
 }
 
 @media screen and (max-width: 1200px) {
@@ -15,6 +15,12 @@
     height: 100%;
     padding: 10px;
   }
+}
+
+.connecter .menu-connecter .ajouter {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .connecter .menu-connecter .navbar {

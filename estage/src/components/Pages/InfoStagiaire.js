@@ -8,14 +8,11 @@ import  {Affiche}  from "../Affiche";
 import  {Listestage}  from "../Listes/Listestage";
 import  {Fiches}  from "../Fiches";
 
-
 export class InfoStagiaire extends React.Component {
-
-
     render() {
         return (
             <> 
-                <Top box="header4"></Top>
+                <Top box="header2"></Top>
 
                 <Fiches/>
 
@@ -34,4 +31,3 @@ export class InfoStagiaire extends React.Component {
         ); 
     }
 }
-

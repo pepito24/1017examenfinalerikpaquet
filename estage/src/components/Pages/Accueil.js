@@ -25,10 +25,6 @@ export class Accueil extends React.Component {
 
                 <Imgdroite/>
 
-                {
-                    // Your comment goes in here.
-                }
-
                 <Footer/>
             </>
         ); 
