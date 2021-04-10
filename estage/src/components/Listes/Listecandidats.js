@@ -30,8 +30,8 @@ export class Listecandidats extends React.Component {
       <> 
         <Container fluid className="px-xl-5">
           <Row className="align-items-center px-5">
-            {this.state.donneesRecues.map((key,i) => (
-              <Cards nom={key.nom} prenom={key.prenom} telephone={key.telephone} ville={key.ville} competences={key.competences} formations={key.formations}></Cards>
+            {this.state.donneesRecues.map((key,j) => (
+              <Cards nom={key.nom} prenom={key.prenom} telephone={key.telephone} ville={key.ville} competences={key.competences} formations={key.formations} id={key._id}></Cards>
             ))}
           </Row>
           <Row className="mb-5">

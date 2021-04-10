@@ -2,6 +2,8 @@ import React from "react";
 import { Container, Row, Col, } from "react-bootstrap";
 import {Link} from 'react-router-dom';
 
+
+// Footer
 function Footer() {
     return (
         <>      
@@ -58,7 +60,7 @@ function Footer() {
                             <Link exact to="/" className="">Accueil</Link>
                             <Link exact to="/apropos" className="">À propos</Link>
                             <Link exact to="/confidentialite" className="">Confidentialité</Link>
-                            <Link exact to="/contact" className="">Nous joindre</Link>
+                            <Link exact to="/contact" className="">Contact</Link>
                             <Link exact to="/admin" className="">Partenaires</Link>
                         </p>
                     </Col>  

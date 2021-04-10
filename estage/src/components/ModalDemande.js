@@ -12,14 +12,14 @@ export class ModalDemande extends React.Component {
         this.addStage = this.addStage.bind(this);
       }
     
-      async addStage(titre,programmeSuivi,autresFormations) { 
+      async addStage(titre,competences,autresFormations) { 
         try{ 
           const response = await fetch("https://peaceful-headland-60327.herokuapp.com/api/demandes", { 
             method:'POST', 
             headers: {'Content-Type': 'application/json'  }, 
             body:JSON.stringify({
                 titre: titre,
-                programmeSuivi: programmeSuivi,
+                competences: competences,
                 autresFormations: autresFormations,
             }) 
           }); 
@@ -36,11 +36,11 @@ export class ModalDemande extends React.Component {
        } 
     }
     
-    formulaireEstValide(titre,programmeSuivi,autresFormations){
+    formulaireEstValide(titre,competences,autresFormations){
       const _errors ={};
     
       if(!titre) _errors.titre = "Le titre est obligatoire";
-      if(!programmeSuivi) _errors.programmeSuivi = "Est obligatoire";
+      if(!competences) _errors.competences = "Est obligatoire";
       if(!autresFormations) _errors.autresFormations = "Est obligatoire";
     
       this.setState({errors : _errors});
@@ -52,13 +52,13 @@ export class ModalDemande extends React.Component {
     handleAdd(event){
         event.preventDefault();
         
-        const titre = document.getElementById('nomPokemon').value;
-        const programmeSuivi = document.getElementById('attaque1').value;
-        const autresFormations = document.getElementById('attaque2').value;
+        const titre = document.getElementById('titre').value;
+        const competences = document.getElementById('competences').value;
+        const autresFormations = document.getElementById('autresFormations').value;
         
     
-        if(this.formulaireEstValide(titre,programmeSuivi,autresFormations)){
-          this.addStage(titre,programmeSuivi,autresFormations);
+        if(this.formulaireEstValide(titre,competences,autresFormations)){
+          this.addStage(titre,competences,autresFormations);
         }
         
       }
@@ -69,11 +69,11 @@ export class ModalDemande extends React.Component {
       <>
         <Modal show={this.props.show} onHide={this.props.onHide}>
             <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Ajouter une demande de stage</Modal.Title>
             </Modal.Header>
             <Modal.Body>
             <Form>
-              <Form.Group controlId="nomPokemon">
+              <Form.Group controlId="titre">
                 <Form.Label>titre</Form.Label>
                 <Form.Control type="text" placeholder="titre" isInvalid={!!this.state.errors.titre}/>
                 <Form.Control.Feedback type="invalid">
@@ -82,15 +82,15 @@ export class ModalDemande extends React.Component {
               </Form.Group>
               
              
-              <Form.Group controlId="attaque1">
-                <Form.Label>Programme suivi</Form.Label>
-                <Form.Control type="text" placeholder="Programme suivi" isInvalid={!!this.state.errors.programmeSuivi}/>
+              <Form.Group controlId="competences">
+                <Form.Label>Competences</Form.Label>
+                <Form.Control type="text" placeholder="Competences" isInvalid={!!this.state.errors.competences}/>
                 <Form.Control.Feedback type="invalid">
-                  {this.state.errors.programmeSuivi}
+                  {this.state.errors.competences}
                 </Form.Control.Feedback>
               </Form.Group>
              
-              <Form.Group controlId="attaque2">
+              <Form.Group controlId="autresFormations">
                 <Form.Label>autresFormations</Form.Label>
                 <Form.Control type="text" placeholder="autresFormations" isInvalid={!!this.state.errors.autresFormations}/>
                 <Form.Control.Feedback type="invalid">

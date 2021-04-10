@@ -18,8 +18,8 @@ export class AdminCards extends React.Component {
                             <Card.Text>
                                 {this.props.descriptionPosteRecherche}
                             </Card.Text>
-                            <Link exact to={this.props.postuler} className="btn btn-primary radius mr-5">Postuler</Link>  
-                            <Link exact to={this.props.postuler} className="btn btn-danger radius mr-5">Postuler</Link> 
+                            <Link exact to={this.props.voir} className="btn btn-primary radius mr-5">Voir</Link>  
+                            <Link to={this.props.url + this.props.id} className="btn btn-danger radius mr-5">Modifier</Link> 
                             <Link onClick={this.props.Supprimer} className="btn btn-success radius">Supprimer</Link>
                         </Card.Body>
                     </Card>

@@ -2,6 +2,8 @@ import React from "react";
 import { Nav, Navbar} from "react-bootstrap";
 import {Link} from 'react-router-dom' 
 
+
+// Header
 export class Header extends React.Component {
   render() {
     return (
@@ -32,4 +34,4 @@ export class Header extends React.Component {
       </>
     );
   }
-}
+} // export class

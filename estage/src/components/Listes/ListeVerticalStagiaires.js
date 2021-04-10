@@ -33,7 +33,7 @@ export class ListeVerticalStagiaires extends React.Component {
                 <Col xl="8" className="">
                   <p className="ml-4">Accueil / Candidats</p>
                   {this.state.donneesRecues.map((key,i) => (
-                    <Listcards nom={key.nom} prenom={key.prenom} ville={key.ville} competences={key.competences} formations={key.formations}></Listcards>
+                    <Listcards nom={key.nom} prenom={key.prenom} ville={key.ville} competences={key.competences} formations={key.formations} id={key._id} url= "/info/candidats/"></Listcards>
                   ))}
                 </Col>
                 <Col xl="4" className="">

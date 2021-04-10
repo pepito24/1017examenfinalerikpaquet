@@ -20,6 +20,10 @@ export class Login extends React.Component {
   render() {
     return (
       <> 
+        {
+          // Formulaire de connexion
+        }
+
         <Container fluid className="">
             <Row className="my-5 py-5 mx-xl-5 px-xl-5">
                 <Col xl="4" className="">
@@ -43,7 +47,13 @@ export class Login extends React.Component {
                   </Form> 
                 </Col>
 
+
                 <Col xl="1" className=""></Col>
+
+
+                {
+                   // Formulaire nouvel utilisateur (disabled - non terminé)
+                }
 
                 <Col xl="7" className="">
                   <h1 className="mb-5">Nouvel utilisateur</h1>
@@ -51,7 +61,7 @@ export class Login extends React.Component {
                     <Form.Row>
                       <Form.Group as={Col} controlId="formGridEmail">
                         <Form.Label>Courriel</Form.Label>
-                        <Form.Control type="email" placeholder="Courriel" required isInvalid={!!this.state.errors.email}/>
+                        <Form.Control type="email" placeholder="Courriel" disabled required isInvalid={!!this.state.errors.email}/>
                         <Form.Control.Feedback type="invalid"> 
                           {this.state.errors.email} 
                         </Form.Control.Feedback>
@@ -59,27 +69,23 @@ export class Login extends React.Component {
 
                       <Form.Group as={Col} controlId="formGridPassword">
                         <Form.Label>Mot de passe</Form.Label>
-                        <Form.Control type="password" placeholder="Mot de passe" required/>
+                        <Form.Control type="password" placeholder="Mot de passe" required disabled/>
                       </Form.Group>
                     </Form.Row>
 
                     <Form.Row>
-                      <Form.Group as={Col} controlId="formGridCity">
-                        <Form.Label>City</Form.Label>
-                        <Form.Control />
+                      <Form.Group as={Col} controlId="formGridNom">
+                        <Form.Label>Nom</Form.Label>
+                        <Form.Control disabled/>
                       </Form.Group>
 
-                      <Form.Group as={Col} controlId="formGridZip">
-                        <Form.Label>Zip</Form.Label>
-                        <Form.Control />
+                      <Form.Group as={Col} controlId="formGridPrenom">
+                        <Form.Label>Prénom</Form.Label>
+                        <Form.Control disabled/>
                       </Form.Group>
                     </Form.Row>
 
-                    <Form.Group id="formGridCheckbox">
-                      <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
-
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" disabled>
                       Submit
                     </Button>
                   </Form>
@@ -89,4 +95,4 @@ export class Login extends React.Component {
       </>
     ); 
   }
-}
+} // export class

@@ -30,5 +30,5 @@ export class Candidats extends React.Component {
             </>
         ); 
     }
-}
+} // export class
 

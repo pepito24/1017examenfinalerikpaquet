@@ -20,12 +20,11 @@ export class Listcards extends React.Component {
                             <Card.Text>
                                 {this.props.formations}
                             </Card.Text>
-                            <Link to={"/info/" + this.props.id} className="btn btn-primary">Voir</Link> 
-                            <Link exact to={this.props.postuler} className="btn btn-primary ml-3">Button</Link> 
+                            <Link to={this.props.url + this.props.id} className="btn btn-primary">En savoir plus</Link> 
                         </Card.Body>
                     </Card>
                 </Col>  
             </>
         ); 
     }
-}
+} // export class

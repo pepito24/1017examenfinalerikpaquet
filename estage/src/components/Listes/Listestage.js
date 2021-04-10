@@ -3,7 +3,7 @@ import {Container, Row, Col} from "react-bootstrap";
 import {Link} from 'react-router-dom';
 import { Cards } from "../Cards";
 
-const ok = "/info/";
+
 export class Listestage extends React.Component {
 
   constructor(props) {
@@ -30,8 +30,8 @@ export class Listestage extends React.Component {
       <> 
         <Container fluid className="px-xl-5">
           <Row className="align-items-center px-5">
-            {this.state.donneesRecues.slice(1, 5).map((key,i) => (
-            <Cards titre={key.titre} ville={key.ville} entreprise={key.entreprise} description={key.description} link={ok + key.id}></Cards>
+            {this.state.donneesRecues.slice(1, 5).map((key,c) => (
+              <Cards titre={key.titre} ville={key.ville} entreprise={key.entreprise} description={key.description} id={key._id}></Cards>
             ))}     
           </Row>
           <Row className="mb-5">

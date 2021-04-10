@@ -8,14 +8,15 @@
 .footer    
     background-color: $color_grey
 
+    h4, ul 
+        @media screen and (max-width: 576px) 
+            text-align: center
+
     ul li 
         margin-bottom: 5px
 
         a
             color: $color_blue
-
-            @media screen and (max-width: 576px) 
-            text-align: center
             
             &:hover 
                 text-decoration: underline
@@ -31,6 +32,9 @@
             margin: 0 30px
             color: black
             font-weight: 500
+
+            @media screen and (max-width: 768px) 
+                margin: 0 10px
 
         @media screen and (max-width: 768px) 
             text-align: center

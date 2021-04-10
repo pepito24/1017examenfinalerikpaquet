@@ -30,4 +30,4 @@ export class Stages extends React.Component {
             </>
         ); 
     }
-}
+} // export class

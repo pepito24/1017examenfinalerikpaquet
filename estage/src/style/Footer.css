@@ -2,6 +2,12 @@
   background-color: #f0f0f0;
 }
 
+@media screen and (max-width: 576px) {
+  .footer h4, .footer ul {
+    text-align: center;
+  }
+}
+
 .footer ul li {
   margin-bottom: 5px;
 }
@@ -28,6 +34,13 @@
   margin: 0 30px;
   color: black;
   font-weight: 500;
+  word-break: normal;
+}
+
+@media screen and (max-width: 768px) {
+  .footer .footer-bottom p a {
+    margin: 0 10px;
+  }
 }
 
 @media screen and (max-width: 768px) {

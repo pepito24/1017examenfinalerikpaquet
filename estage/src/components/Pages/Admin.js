@@ -10,17 +10,14 @@ import  {BlockImagetexte}  from "../BlockImageTexte";
 import  {Login}  from "../Bases/Login";
 import  {ModalDemande}  from "../ModalDemande";
 
-
 export class Admin extends React.Component {
   constructor(props) {  
     super(props);  
     this.state = {connecter: false};
     this.state = {utilisateur: 0};
-    
 
     this.state = {show: false};
     this.state = {setshow: false};
-
 
     this.gererConnexion = this.gererConnexion.bind(this);
     this.handleConnexion = this.handleConnexion.bind(this);
@@ -52,35 +49,33 @@ export class Admin extends React.Component {
         this.setState({ connecter: false }); 
     }
 
-    // Modal fermé
+    // Modal fermé (ajout)
     handleClose() {
         this.setState({ setshow: false }); 
         this.setState({ show: false });
     }
 
-    // Modal ouvert
+    // Modal ouvert (ajout)
     handleShow() {
         this.setState({ setshow: true });
         this.setState({ show: true });
     }
 
-
     // Choix d'affichage
     gererConnexion(){
 
         // Utilisateur normal connecté
-        if(this.state.connecter && this.state.utilisateur === 1){
+        if(this.state.connecter && this.state.utilisateur === 1 ){
             return (
                 <Container fluid className="">
                     <Row className="connecter">
                         <Menu onClick={this.handleDeconnexion}/>
                         <Col xl="10" className="">
                             <Row className=" mt-4 mx-5">
-                                <Col xl="3" xs="6" className="ajouter">
-                                   <Button variant="outline-primary">+ Ajouter une demande de stage</Button>
-                                </Col>
+                               <Button variant="outline-primary" onClick={this.handleShow}>+ Ajouter une demande de stage</Button>
                             </Row> 
                             <Row className="mt-4 mx-5">
+                                <ModalDemande show={this.state.show} onHide={this.handleClose} onClick={this.handleClose}/>
                                 <ListeAdminCards/>  
                             </Row> 
                         </Col>    
@@ -98,12 +93,12 @@ export class Admin extends React.Component {
                         <Col xl="10" className="">
                             <Row className=" mt-4 mx-5">
                                 <Col xl="6" className="ajouter">
-                                    <Button variant="outline-primary" className="mr-4">+ Ajouter une offre de stage</Button><Button variant="outline-primary" onClick={this.handleShow}>+ Ajouter une demande de stage</Button>
+                                    <Button variant="outline-primary" className="mr-4">+ Ajouter une offre de stage</Button>
                                 </Col>
                             </Row> 
                             <Row className="mt-4 mx-5">
-                            <ModalDemande show={this.state.show} onHide={this.handleClose} onClick={this.handleClose} onClick={this.handleClose}/>
-                                <ListeAdminCards/>
+                                <ModalDemande show={this.state.show} onHide={this.handleClose} onClick={this.handleClose}/> 
+                                <ListeAdminCards /> 
                             </Row> 
 
                         </Col>    

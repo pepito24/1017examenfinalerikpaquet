@@ -18,13 +18,12 @@ export class Cards extends React.Component {
                         </Card.Text>
                         <Card.Text>
                             {this.props.formations}
-                        </Card.Text>
-                        <Link exact to={this.props.link} className="">Détails</Link> 
-                        <Link exact to={this.props.postuler} className="btn btn-primary radius ml-5">Postuler</Link> 
+                        </Card.Text> 
+                        <Link to={"/info/" + this.props.id} className="btn btn-primary radius">En savoir plus</Link> 
                     </Card.Body>
                 </Card>
                 </Col>  
             </>
         ); 
     }
-}
+} // export class
