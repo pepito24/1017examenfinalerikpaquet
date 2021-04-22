@@ -58,6 +58,7 @@ function InfoStagiaire(props){
 
       <Texte/>
 
+      <Texte h1="Tu es à la recherche de ton stage de fin d'études?" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore aliqua."></Texte>
       <Listestage/>
 
       <Imgdroite/>

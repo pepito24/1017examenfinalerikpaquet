@@ -17,7 +17,7 @@ export class Imgauche extends React.Component {
                                 <li className="mx-3"><b>Lorem ipsum dolor sit amet, consectetur</b></li>
                                 <li className="mx-3"><b>Lorem ipsum dolor sit amet, consectetur</b></li>
                             </ul>
-                            <Link exact to="/" className="btn btn-primary mx-5 mt-3">Publier une offre de stage maintenant!</Link> 
+                            <Link exact to="/admin" className="btn btn-primary mx-5 mt-3">Publier une offre de stage maintenant!</Link> 
                         </Col>
                     </Row>
                 </Container>

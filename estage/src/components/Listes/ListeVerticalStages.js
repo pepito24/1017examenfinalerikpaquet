@@ -33,7 +33,7 @@ export class ListeVerticalStages extends React.Component {
           <Row className="mx-xl-5 px-xl-5">
             <Col xl="8" className="">
             <p className="ml-4">Accueil / Stages</p>
-                {this.state.donneesRecues.slice(1, 5).map((key,k) => (
+                {this.state.donneesRecues.map((key,k) => (
                   <Listcards titre={key.titre} entreprise={key.entreprise} description={key.description} src= {img} id={key._id} url= "/info/"></Listcards>
                 ))}
             </Col>

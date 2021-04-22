@@ -15,9 +15,8 @@ export class Menu extends React.Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav defaultActiveKey="/home" className="flex-column">
-                <Link exact to="/" className=""><FontAwesomeIcon icon={faHome} />Accueil</Link>
-                <Link exact to="/" className=""><FontAwesomeIcon icon={faArrowAltCircleLeft} />Demandes de stage</Link>
-                <Link exact to="/" className=""><FontAwesomeIcon icon={faGraduationCap} />Candidats</Link>
+                <Link onClick={this.props.test}><FontAwesomeIcon icon={faHome} />Accueil</Link>
+                <Link onClick={this.props.handleShow}><FontAwesomeIcon icon={faArrowAltCircleLeft} />Demandes de stage</Link>
                 <Button variant="danger" className="deco" onClick={this.props.onClick}>
                   <FontAwesomeIcon icon={faDoorOpen} /> Déconnexion
                 </Button>

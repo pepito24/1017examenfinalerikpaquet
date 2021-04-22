@@ -1,7 +1,7 @@
 import React from "react";
 import {Container, Row, Col, Card, Button} from "react-bootstrap";
 import  {Secteurs}  from "./Secteurs";
-import {Link} from 'react-router-dom';
+
 
 export class Fiches extends React.Component {
   render() {

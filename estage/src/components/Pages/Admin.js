@@ -3,21 +3,24 @@ import {Container, Row, Col, Button} from "react-bootstrap";
 import  {Menu}  from "../Menu";
 import  {MenuAdmin}  from "../MenuAdmin";
 import  {ListeAdminCards}  from "../Listes/ListeAdminCards";
+import  {ListeAdminCardsStages}  from "../Listes/ListeAdminCardsStages";
 import  Footer  from "../Bases/Footer";
 import  {Affiche}  from "../Affiche";
 import  {Top}  from "../Bases/Top";
 import  {BlockImagetexte}  from "../BlockImageTexte";
 import  {Login}  from "../Bases/Login";
-import  {ModalDemande}  from "../ModalDemande";
+import  {ModalUn}  from "../Modals/ModalUn";
+import  {ModalDeux}  from "../Modals/ModalDeux";
 
 export class Admin extends React.Component {
   constructor(props) {  
     super(props);  
     this.state = {connecter: false};
     this.state = {utilisateur: 0};
-
+    
     this.state = {show: false};
-    this.state = {setshow: false};
+    this.state = {voir: false};
+    
 
     this.gererConnexion = this.gererConnexion.bind(this);
     this.handleConnexion = this.handleConnexion.bind(this);
@@ -25,6 +28,8 @@ export class Admin extends React.Component {
    
     this.handleClose = this.handleClose.bind(this);
     this.handleShow = this.handleShow.bind(this);
+
+    this.handleSh = this.handleSh.bind(this);
     }
 
     // Vérification de la connexion utilisateur
@@ -32,12 +37,12 @@ export class Admin extends React.Component {
         const email = document.getElementById('email').value;
         const pass = document.getElementById('password').value;
 
-        // Utilisateur normal
+        // Utilisateur étudiant
         if (email.toLowerCase() === "g.o.t.s@hotmail.com" && pass === "erik"){
             this.setState({ connecter: true }); 
             this.setState({ utilisateur: 1 }); 
         } 
-        // Utilisateur Admin
+        // Utilisateur entreprise
         if (email.toLowerCase() === "admin@hotmail.com" && pass === "admin"){
             this.setState({ connecter: true }); 
             this.setState({ utilisateur: 2 }); 
@@ -49,33 +54,38 @@ export class Admin extends React.Component {
         this.setState({ connecter: false }); 
     }
 
-    // Modal fermé (ajout)
-    handleClose() {
-        this.setState({ setshow: false }); 
+    // Modal 1&2 fermé
+    handleClose() { 
         this.setState({ show: false });
+        this.setState({ voir: false });
     }
 
-    // Modal ouvert (ajout)
+    // Modal 1 ouvert 
     handleShow() {
-        this.setState({ setshow: true });
         this.setState({ show: true });
     }
+
+    // Modal 2 ouvert
+    handleSh() {
+        this.setState({ voir: true });
+    }
+
 
     // Choix d'affichage
     gererConnexion(){
 
         // Utilisateur normal connecté
-        if(this.state.connecter && this.state.utilisateur === 1 ){
+        if(this.state.connecter && this.state.utilisateur === 1){
             return (
                 <Container fluid className="">
                     <Row className="connecter">
-                        <Menu onClick={this.handleDeconnexion}/>
-                        <Col xl="10" className="">
+                        <Menu onClick={this.handleDeconnexion} handleShow={this.handleShow}/>
+                        <Col xl="10">
                             <Row className=" mt-4 mx-5">
                                <Button variant="outline-primary" onClick={this.handleShow}>+ Ajouter une demande de stage</Button>
                             </Row> 
-                            <Row className="mt-4 mx-5">
-                                <ModalDemande show={this.state.show} onHide={this.handleClose} onClick={this.handleClose}/>
+                            <Row className="my-lg-4 mx-lg-5 mx-2 my-1">
+                                <ModalUn show={this.state.show} onHide={this.handleClose} onClick={this.handleClose}/>
                                 <ListeAdminCards/>  
                             </Row> 
                         </Col>    
@@ -88,19 +98,18 @@ export class Admin extends React.Component {
         else if(this.state.connecter && this.state.utilisateur === 2){
             return (
                 <Container fluid className="connecter">
-                    <Row className="">
-                        <MenuAdmin onClick={this.handleDeconnexion}/>
-                        <Col xl="10" className="">
+                    <Row>
+                        <MenuAdmin onClick={this.handleDeconnexion} handleShow={this.handleSh}/>
+                        <Col xl="10">
                             <Row className=" mt-4 mx-5">
                                 <Col xl="6" className="ajouter">
-                                    <Button variant="outline-primary" className="mr-4">+ Ajouter une offre de stage</Button>
+                                    <Button variant="outline-primary" className="ml-3" onClick={this.handleSh}>+ Ajouter une offre de stage</Button>
                                 </Col>
                             </Row> 
-                            <Row className="mt-4 mx-5">
-                                <ModalDemande show={this.state.show} onHide={this.handleClose} onClick={this.handleClose}/> 
-                                <ListeAdminCards /> 
+                            <Row className="y-lg-4 mx-lg-5 mx-2 my-1"> 
+                                <ModalDeux voir={this.state.voir} hide={this.handleClose} />
+                                <ListeAdminCardsStages/> 
                             </Row> 
-
                         </Col>    
                     </Row>   
                 </Container>

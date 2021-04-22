@@ -30,8 +30,8 @@ export class Listestage extends React.Component {
       <> 
         <Container fluid className="px-xl-5">
           <Row className="align-items-center px-5">
-            {this.state.donneesRecues.slice(1, 5).map((key,c) => (
-              <Cards titre={key.titre} ville={key.ville} entreprise={key.entreprise} description={key.description} id={key._id}></Cards>
+            {this.state.donneesRecues.slice(0, 4).map((key,c) => (
+              <Cards titre={key.titre} ville={key.ville} entreprise={key.entreprise} description={key.description} id={key._id} url= "/info/"></Cards>
             ))}     
           </Row>
           <Row className="mb-5">

@@ -14,6 +14,7 @@
   .connecter .menu-connecter {
     height: 100%;
     padding: 10px;
+    min-height: 100%;
   }
 }
 

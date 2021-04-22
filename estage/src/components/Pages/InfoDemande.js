@@ -10,13 +10,11 @@ import  {Fiches}  from "../Fiches";
 
 
 
-function InfoStage(props){
+function InfoDemande(props){
   const [donneesRecues , setDonneesRecues] = useState({titre: '', entreprise: '', ville: '', secteurActivite: '', dateDebut: '' , dateFin: '', description: '' , competences: '' , informationsSupplementaires: '' , salaire: ''});
   // Récupérer le Id dans URL
   const path = window.location.pathname.split('/')
   const id = path[path.length - 1]
-  const img = "https://images.squarespace-cdn.com/content/v1/5cbf8afea9ab9526f59fe9dc/1556647345674-7SP5F1MJET1ZMDZ532HP/ke17ZwdGBToddI8pDm48kEzpZ6Y0-iwzbc_69IBBydkUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYwL8IeDg6_3B-BRuF4nNrNcQkVuAT7tdErd0wQFEGFSnOr8OIBQiUVhsebU86gWXzc5t_c8dnc5uDML7b17RYmPPd0P-txJpSxme9C4agMgEQ/image-asset.png";
-
 
   //Ajout de la gestion des erreurs
   useEffect(() => {
@@ -26,7 +24,7 @@ function InfoStage(props){
   // Gérer l'accès API
   async function getStageInfos() {
     try {
-      const response = await fetch("https://peaceful-headland-60327.herokuapp.com/api/stage/" + id);
+      const response = await fetch("https://peaceful-headland-60327.herokuapp.com/api/demandes/" + id);
       const reponseDeApi = await response.json();
       setDonneesRecues(reponseDeApi);
      
@@ -56,14 +54,13 @@ function InfoStage(props){
         titre1= "Description"
         titre2= "Compétences recherchés"
         titre3= "Informations"
-        src= {img}>
+        >
       </Fiches>
 
       <Imgauche/>
 
       <Texte/>
 
-      <Texte h1="Tu es à la recherche de ton stage de fin d'études?" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore aliqua."></Texte>
       <Listestage/>
 
       <Imgdroite/>
@@ -76,4 +73,4 @@ function InfoStage(props){
 }
 
 
-export default InfoStage;
+export default InfoDemande;

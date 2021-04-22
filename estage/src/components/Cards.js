@@ -19,7 +19,7 @@ export class Cards extends React.Component {
                         <Card.Text>
                             {this.props.formations}
                         </Card.Text> 
-                        <Link to={"/info/" + this.props.id} className="btn btn-primary radius">En savoir plus</Link> 
+                        <Link to={this.props.url + this.props.id} className="btn btn-primary radius">En savoir plus</Link> 
                     </Card.Body>
                 </Card>
                 </Col>  

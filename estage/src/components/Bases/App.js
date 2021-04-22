@@ -9,6 +9,7 @@ import  {Connexion}  from "../Pages/Connexion";
 import  {Contact}  from "../Pages/Contact";
 import  InfoStage  from "../Pages/InfoStage";
 import  InfoStagiaire  from "../Pages/InfoStagiaire";
+import  InfoDemande  from "../Pages/InfoDemande";
 import { Route, Switch } from "react-router-dom";
 import {BrowserRouter as Router} from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -31,6 +32,7 @@ function App() {
           <Route path="/stages" component={Stages}/>
           <Route path="/contact" component={Contact}/>
           <Route path={"/info/:_id"} exact component={InfoStage}/>
+          <Route path={"/info/demande/:_id"} exact component={InfoDemande}/>
           <Route path="/confidentialite" component={Confidentialite}/>
           <Route path={"/info/candidats/:_id"} exact component={InfoStagiaire}/>
         </Switch>

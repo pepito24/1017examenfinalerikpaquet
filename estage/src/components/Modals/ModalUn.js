@@ -2,7 +2,7 @@ import React from "react";
 import { Button,Modal, Form } from "react-bootstrap";
 import {toast} from "react-toastify";
 
-export class ModalDemande extends React.Component {
+export class ModalUn extends React.Component {
 
     constructor(props) {
         super(props);
@@ -12,7 +12,8 @@ export class ModalDemande extends React.Component {
         this.addStage = this.addStage.bind(this);
       }
     
-      async addStage(titre,competences,autresFormations) { 
+      // Ajouter une demande de stage
+      async addStage(titre,competences,ville,descriptionPosteRecherche) { 
         try{ 
           const response = await fetch("https://peaceful-headland-60327.herokuapp.com/api/demandes", { 
             method:'POST', 
@@ -20,13 +21,13 @@ export class ModalDemande extends React.Component {
             body:JSON.stringify({
                 titre: titre,
                 competences: competences,
-                autresFormations: autresFormations,
+                ville: ville,
+                descriptionPosteRecherche: descriptionPosteRecherche,
             }) 
           }); 
           if(response.ok){ 
             const jsonResponse = await response.json(); 
             toast.success("Ajout de la demande de stage ! ");
-    
             return jsonResponse; 
           } 
           throw new Error('Request failed!'); 
@@ -36,31 +37,33 @@ export class ModalDemande extends React.Component {
        } 
     }
     
-    formulaireEstValide(titre,competences,autresFormations){
+
+    // Validation de formulaire
+    formulaireEstValide(titre,competences,ville,descriptionPosteRecherche){
       const _errors ={};
     
-      if(!titre) _errors.titre = "Le titre est obligatoire";
-      if(!competences) _errors.competences = "Est obligatoire";
-      if(!autresFormations) _errors.autresFormations = "Est obligatoire";
+      if(!titre) _errors.titre = "Obligatoire";
+      if(!competences) _errors.competences = "Obligatoire";
+      if(!ville) _errors.ville = "Obligatoire";
+      if(!descriptionPosteRecherche) _errors.descriptionPosteRecherche = "Obligatoire";
     
       this.setState({errors : _errors});
       return Object.keys(_errors).length === 0;
     }
 
-
-    
+    // Confirmation de formulaire
     handleAdd(event){
         event.preventDefault();
         
         const titre = document.getElementById('titre').value;
         const competences = document.getElementById('competences').value;
-        const autresFormations = document.getElementById('autresFormations').value;
+        const ville = document.getElementById('ville').value;
+        const descriptionPosteRecherche = document.getElementById('descriptionPosteRecherche').value;
         
     
-        if(this.formulaireEstValide(titre,competences,autresFormations)){
-          this.addStage(titre,competences,autresFormations);
-        }
-        
+        if(this.formulaireEstValide(titre,competences,ville,descriptionPosteRecherche)){
+          this.addStage(titre,competences,ville,descriptionPosteRecherche);
+        }   
       }
 
 
@@ -74,8 +77,8 @@ export class ModalDemande extends React.Component {
             <Modal.Body>
             <Form>
               <Form.Group controlId="titre">
-                <Form.Label>titre</Form.Label>
-                <Form.Control type="text" placeholder="titre" isInvalid={!!this.state.errors.titre}/>
+                <Form.Label>Titre de la demande</Form.Label>
+                <Form.Control type="text" placeholder="Titre" isInvalid={!!this.state.errors.titre}/>
                 <Form.Control.Feedback type="invalid">
                   {this.state.errors.titre}
                 </Form.Control.Feedback>
@@ -83,18 +86,26 @@ export class ModalDemande extends React.Component {
               
              
               <Form.Group controlId="competences">
-                <Form.Label>Competences</Form.Label>
-                <Form.Control type="text" placeholder="Competences" isInvalid={!!this.state.errors.competences}/>
+                <Form.Label>Compétences</Form.Label>
+                <Form.Control type="text" placeholder="Compétences" isInvalid={!!this.state.errors.competences}/>
                 <Form.Control.Feedback type="invalid">
                   {this.state.errors.competences}
                 </Form.Control.Feedback>
               </Form.Group>
-             
-              <Form.Group controlId="autresFormations">
-                <Form.Label>autresFormations</Form.Label>
-                <Form.Control type="text" placeholder="autresFormations" isInvalid={!!this.state.errors.autresFormations}/>
+
+              <Form.Group controlId="ville">
+                <Form.Label>Ville</Form.Label>
+                <Form.Control type="text" placeholder="Ville" isInvalid={!!this.state.errors.ville}/>
                 <Form.Control.Feedback type="invalid">
-                  {this.state.errors.autresFormations}
+                  {this.state.errors.ville}
+                </Form.Control.Feedback>
+              </Form.Group>
+             
+              <Form.Group controlId="descriptionPosteRecherche">
+                <Form.Label>Description du poste recherché</Form.Label>
+                <Form.Control as="textarea" rows={3} placeholder="Description du poste recherché" isInvalid={!!this.state.errors.descriptionPosteRecherche}/>
+                <Form.Control.Feedback type="invalid">
+                  {this.state.errors.descriptionPosteRecherche}
                 </Form.Control.Feedback>
               </Form.Group>
 
