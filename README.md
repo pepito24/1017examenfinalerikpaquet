@@ -19,5 +19,4 @@ Le projet Estage offre la possibilité a un utilisateur (stagiaire) d’ajouter 
 <li>Connexion entreprise 
 (Possibilité d’ajout, modification et suppression d’une offre de stage)</li>
  <ul>
-  <br>
-<hr>
+
